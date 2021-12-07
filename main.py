@@ -44,9 +44,18 @@ if ans.lower() == "ja":
     else:
         print("❌ Du svarede forkert!")
         score -= 2
+    
+    ans = input("🎮 4. Hvad er det bedste spil?")
+    if ans.lower() == "minecraft" or ans.lower() == "rogue company":
+        score += 4
+        print("✅ Du svarede rigtigt!")
+    else:
+        print("❌ Du svarede forkert!")
+        score -= 3
+    
+    
+if score == 10:
+    print("🎉 Du har sku svaret rigtigt på alt! Din score var helt oppe på ", colored(score, "green"))
 
-if score == 6:
-    print("🎉 Du har sku vundet! Din score var helt oppe på ", colored(score, "green"))
-
-if score != 6:
+if score != 10:
   print('🥴 Du kom igennem med en score på ', colored(score, "red"), ' Du kan godt gøre det bedere!')
