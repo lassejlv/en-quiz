@@ -1,10 +1,21 @@
+# dette gøre sådan vi kan bruge nogle farver i vores terminal
+from termcolor import colored
+
 print("Hejsa og velkommen til min første Python-spil!")
+print()
+print("Dette spil er lavet af " + colored("Lasse V", "cyan") )
+print("Dette spil er open-source på github, så du kan se det her: " + colored("\x1b]8;;http://github.com/lassev05/en-quiz\aKlik her\x1b]8;;\a", "cyan") 
++ " Husk at giv en stjerne til github!")
+print()
 
-ans = input("Er du klar til at spille? (ja/nej)")
+# her spørger vi om personen vil spille
+ans = input("Er du klar til at spille? " + colored("(ja/nej)", "yellow"))
 
+## her er scoren igennem hele spillet
 score = 0
 total_q: 4
 
+## her stater spillet!
 if ans.lower() == "nej":
     print("😭 Øv, så længe du ikke er klar, så er det bare sådan!")
     exit()
@@ -35,7 +46,7 @@ if ans.lower() == "ja":
         score -= 2
 
 if score == 6:
-    print("Du har sku vundet! Din score var helt oppe på ", score)
+    print("🎉 Du har sku vundet! Din score var helt oppe på ", colored(score, "green"))
 
 if score != 6:
-  print('Du kom igennem med en score på ', score, ' du godt gøre det bedere!')
+  print('🥴 Du kom igennem med en score på ', colored(score, "red"), ' Du kan godt gøre det bedere!')
